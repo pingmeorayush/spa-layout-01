@@ -1,70 +1,348 @@
-# Getting Started with Create React App
+## <a name="tech-stack">⚙️ SPA layout 01</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
-## Available Scripts
+- Tailwind CSS
+- React.js
 
-In the project directory, you can run:
+👉 **Mobile Responsive**: The entire website is responsive across various devices, emphasizing Tailwind's mobile-friendly capabilities.
 
-### `npm start`
+and many more, including code architecture and reusability
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## <a name="quick-start">🤸 Quick Start</a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Follow these steps to set up the project locally on your machine.
 
-### `npm test`
+**Prerequisites**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have the following installed on your machine:
 
-### `npm run build`
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Cloning the Repository**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/adrianhajdin/nike_landing_page.git
+cd nike_landing_page
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Installation**
 
-### `npm run eject`
+Install the project dependencies using npm:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Running the Project**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
 
-## Learn More
+## <a name="snippets">🕸️ Snippets</a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details>
+<summary><code>.eslintrc.cjs</code></summary>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+  ],
+  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  settings: { react: { version: "18.2" } },
+  plugins: ["react-refresh"],
+  rules: {
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowConstantExport: true },
+    ],
+    "react/prop-types": 0,
+  },
+};
+```
 
-### Code Splitting
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<details>
+<summary><code>constants.index.js</code></summary>
 
-### Analyzing the Bundle Size
+```javascript
+import {
+  facebook,
+  instagram,
+  shieldTick,
+  support,
+  truckFast,
+  twitter,
+} from "../assets/icons";
+import {
+  bigShoe1,
+  bigShoe2,
+  bigShoe3,
+  customer1,
+  customer2,
+  shoe4,
+  shoe5,
+  shoe6,
+  shoe7,
+  thumbnailShoe1,
+  thumbnailShoe2,
+  thumbnailShoe3,
+} from "../assets/images";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about-us", label: "About Us" },
+  { href: "#products", label: "Products" },
+  { href: "#contact-us", label: "Contact Us" },
+];
 
-### Making a Progressive Web App
+export const shoes = [
+  {
+    thumbnail: thumbnailShoe1,
+    bigShoe: bigShoe1,
+  },
+  {
+    thumbnail: thumbnailShoe2,
+    bigShoe: bigShoe2,
+  },
+  {
+    thumbnail: thumbnailShoe3,
+    bigShoe: bigShoe3,
+  },
+];
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+export const statistics = [
+  { value: "1k+", label: "Brands" },
+  { value: "500+", label: "Shops" },
+  { value: "250k+", label: "Customers" },
+];
 
-### Advanced Configuration
+export const products = [
+  {
+    imgURL: shoe4,
+    name: "Demo-01",
+    price: "$00.20",
+  },
+  {
+    imgURL: shoe5,
+    name: "Demo-10",
+    price: "$10.20",
+  },
+  {
+    imgURL: shoe6,
+    name: "Demo-100",
+    price: "$20.20",
+  },
+  {
+    imgURL: shoe7,
+    name: "Demo-001",
+    price: "$30.20",
+  },
+];
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export const services = [
+  {
+    imgURL: truckFast,
+    label: "Lorem Ipsum",
+    subtext:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in.",
+  },
+  {
+    imgURL: shieldTick,
+    label: "Lorem Ipsum",
+    subtext:
+      "Experience worry-free transactions with our secure payment options.",
+  },
+  {
+    imgURL: support,
+    label: "Lorem Ipsum",
+    subtext:
+      "Experience worry-free transactions with our secure payment options.",
+  },
+];
 
-### Deployment
+export const reviews = [
+  {
+    imgURL: customer1,
+    customerName: "Lorem Ipsum",
+    rating: 4.5,
+    feedback:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+  },
+  {
+    imgURL: customer2,
+    customerName: "Lorem Ipsum",
+    rating: 4.5,
+    feedback:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+  },
+];
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+export const footerLinks = [
+  {
+    title: "Products",
+    links: [
+      { name: "Lorem Ipsum", link: "/" },
+      { name: "Lorem Ipsum", link: "/" },
+      { name: "Lorem Ipsum", link: "/" },
+      { name: "Lorem Ipsum", link: "/" },
+      { name: "Lorem Ipsum", link: "/" },
+      { name: "Lorem Ipsum", link: "/" },
+    ],
+  },
+  {
+    title: "Help",
+    links: [
+      { name: "About us", link: "/" },
+      { name: "FAQs", link: "/" },
+      { name: "How it works", link: "/" },
+      { name: "Privacy policy", link: "/" },
+      { name: "Payment policy", link: "/" },
+    ],
+  },
+  {
+    title: "Get in touch",
+    links: [
+      { name: "customer@test.com", link: "mailto:customer@test.com" },
+      { name: "+92554862354", link: "tel:+92554862354" },
+    ],
+  },
+];
 
-### `npm run build` fails to minify
+export const socialMedia = [
+  { src: facebook, alt: "facebook logo" },
+  { src: twitter, alt: "twitter logo" },
+  { src: instagram, alt: "instagram logo" },
+];
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
+
+<details>
+<summary><code>index.css</code></summary>
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .input {
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+  }
+}
+
+@layer utilities {
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+
+  .padding-x {
+    @apply sm:px-16 px-8;
+  }
+
+  .padding-y {
+    @apply sm:py-24 py-12;
+  }
+
+  .padding-l {
+    @apply sm:pl-16 pl-8;
+  }
+
+  .padding-r {
+    @apply sm:pr-16 pr-8;
+  }
+
+  .padding-t {
+    @apply sm:pt-24 pt-12;
+  }
+
+  .padding-b {
+    @apply sm:pb-24 pb-12;
+  }
+
+  .info-text {
+    @apply font-montserrat text-slate-gray text-lg leading-7;
+  }
+}
+```
+
+</details>
+
+<details>
+<summary><code>tailwind.config.js</code></summary>
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    fontSize: {
+      xs: ["12px", "16px"],
+      sm: ["14px", "20px"],
+      base: ["16px", "19.5px"],
+      lg: ["18px", "21.94px"],
+      xl: ["20px", "24.38px"],
+      "2xl": ["24px", "29.26px"],
+      "3xl": ["28px", "50px"],
+      "4xl": ["48px", "58px"],
+      "8xl": ["96px", "106px"],
+    },
+    extend: {
+      fontFamily: {
+        palanquin: ["Palanquin", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+      colors: {
+        primary: "#ECEEFF",
+        "coral-red": "#FF6452",
+        "slate-gray": "#6D6D6D",
+        "pale-blue": "#F5F6FF",
+        "white-400": "rgba(255, 255, 255, 0.80)",
+      },
+      boxShadow: {
+        "3xl": "0 10px 40px rgba(0, 0, 0, 0.1)",
+      },
+      backgroundImage: {
+        hero: "url('assets/images/collection-background.svg')",
+        card: "url('assets/images/thumbnail-background.svg')",
+      },
+      screens: {
+        wide: "1440px",
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+</details>
+#
